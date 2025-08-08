@@ -58,17 +58,6 @@
 .chart-container {
   position: relative;
   margin-bottom: var(--space-6);
-  width: 100%;
-  overflow: visible;
-}
-
-/* Ensure chart elements are responsive */
-.chart-container canvas,
-.chart-container svg {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block;
-  margin: 0 auto;
 }
 
 .allocation-legend {
@@ -100,22 +89,18 @@
   border-radius: 6px;
   margin-right: var(--space-3);
   box-shadow: var(--shadow-sm);
-  flex-shrink: 0;
 }
 
 .legend-percentage {
   font-weight: 600;
   color: var(--primary-color);
   font-size: 0.875rem;
-  flex-shrink: 0;
 }
 
 .legend-name {
   flex: 1;
   font-weight: 500;
   color: var(--gray-800);
-  min-width: 0;
-  word-wrap: break-word;
 }
 
 /* Mobile responsiveness */
@@ -127,22 +112,6 @@
   
   .allocation-chart {
     padding: var(--space-6);
-    overflow: visible;
-  }
-  
-  .chart-container {
-    min-height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .chart-container canvas,
-  .chart-container svg {
-    max-width: 100% !important;
-    max-height: 250px !important;
-    width: auto !important;
-    height: auto !important;
   }
 }
 
@@ -150,42 +119,13 @@
   .allocation-wrapper {
     grid-template-columns: 1fr;
     gap: var(--space-4);
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
   
   .allocation-chart {
     padding: var(--space-4);
-    overflow: visible;
   }
   
   .allocation-chart h4 {
     font-size: 1.125rem;
-  }
-  
-  .chart-container {
-    min-height: 200px;
-    padding: var(--space-2);
-  }
-  
-  .chart-container canvas,
-  .chart-container svg {
-    max-width: 100% !important;
-    max-height: 200px !important;
-    width: auto !important;
-    height: auto !important;
-  }
-  
-  .legend-item {
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-  
-  .legend-name {
-    font-size: 0.875rem;
-    line-height: 1.4;
-  }
-  
-  .legend-percentage {
-    font-size: 0.8125rem;
   }
 }
