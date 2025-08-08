@@ -1,4 +1,4 @@
-const BASE_URL = 'https://weathmanager-backend.onrender.com/';
+const BASE_URL = 'https://weathmanager-backend.onrender.com/api/portfolio/';
 
 export async function getHoldings() {
   const res = await fetch(`${BASE_URL}holdings`);
