@@ -1,0 +1,273 @@
+/* .holdings-table-wrapper {
+  margin: 40px 0;
+}
+
+.search-input {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.holdings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.holdings-table thead {
+  background-color: #f5f5f5;
+}
+
+.holdings-table th,
+.holdings-table td {
+  padding: 12px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.holdings-table th {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.holdings-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+} */
+.holdings-table-wrapper {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  margin-bottom: var(--space-12);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.holdings-table-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.table-header h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.table-header h4::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+}
+
+.search-container {
+  position: relative;
+  max-width: 350px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-600);
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4) var(--space-3) 2.5rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--white);
+  font-weight: 500;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(158, 124, 71, 0.1);
+  transform: translateY(-1px);
+}
+
+.search-input::placeholder {
+  color: var(--gray-600);
+  font-weight: 400;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+  margin-top: var(--space-4);
+}
+
+.holdings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  background: var(--white);
+}
+
+.holdings-table thead {
+  background: linear-gradient(135deg, var(--gray-50), var(--gray-100));
+}
+
+.holdings-table th {
+  padding: var(--space-4);
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-800);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  border-bottom: 2px solid var(--gray-200);
+  position: relative;
+  white-space: nowrap;
+}
+
+.holdings-table th:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.holdings-table th:first-child {
+  border-top-left-radius: var(--radius);
+}
+
+.holdings-table th:last-child {
+  border-top-right-radius: var(--radius);
+}
+
+.holdings-table td {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--gray-200);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.holdings-table tbody tr {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.holdings-table tbody tr:hover {
+  background: linear-gradient(135deg, var(--gray-50), transparent);
+  transform: translateX(4px);
+}
+
+.holdings-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.symbol-cell {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.company-name {
+  color: var(--gray-600);
+  font-weight: 500;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.value-cell {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.change-positive {
+  color: var(--success);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.change-negative {
+  color: var(--danger);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.weight-cell {
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .holdings-table-wrapper {
+    padding: var(--space-4);
+    margin: var(--space-6) 0;
+  }
+  
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-container {
+    max-width: none;
+    min-width: auto;
+  }
+  
+  .holdings-table th,
+  .holdings-table td {
+    padding: var(--space-3);
+    font-size: 0.75rem;
+  }
+  
+  .company-name {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .holdings-table th,
+  .holdings-table td {
+    padding: var(--space-2);
+    font-size: 0.7rem;
+  }
+  
+  .company-name {
+    max-width: 100px;
+  }
+}
